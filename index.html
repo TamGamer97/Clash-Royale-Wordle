@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clash Royale Wordle</title>
+    <link href="/CRFont.ttf" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/Images/favicon.png">
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+</head>
+<body>
+    <img src="/Images/bg.png" style="width: 100%; margin: 0px; position: absolute; top: 0; left: 0px;">
+    <div id="mainBody" style="position: absolute; top: 0px; left: 0px; width: 100vw; height: 100vh;">
+        <h1 class="headingTxt" onclick="location.href = location.href" style="color: #ffc32f; text-shadow: 1px 0 black, 0 10px black, 1px 0 black, 0 -1px black; font-size: 50px; margin-left: 50px; font-family: 'Supercell-Magic';">Clash Royale Wordle</h1>
+        <h1 class="subHeadTxt" style="color: #FF6262; text-shadow: 1px 0 black, 0 4px black, 1px 0 black, 0 -1px black; margin-left: 50px; font-family: 'Supercell-Magic'; font-size: 10px; margin-top: -30px;">by <span onclick="window.open('https://tamdev.netlify.app', '_blank')" class="headingTxt">TamGamer97</span></h1>
+        
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <input id="inputCard" type="text" list="cards" style="width: 23%; height: 26px; border-radius: 5px; border: grey; box-shadow: inset 0px 0px 10px rgba(0,0,0,0.5); font-family: 'Supercell-Magic'; padding-left: 10px; outline: none; margin-right: 10px; background-color: white;" autocomplete="Hello" placeholder="Guess a Card">
+            <datalist id="cards"> 
+                <option value=Knight></option>,
+                <option value=Archers></option>,
+                <option value=Goblins></option>,
+                <option value=Giant></option>,
+                <option value=P.E.K.K.A></option>,
+                <option value=Minions></option>,
+                <option value=Balloon></option>,
+                <option value=Witch></option>,
+                <option value=Barbarians></option>,
+                <option value=Golem></option>,
+                <option value=Skeletons></option>,
+                <option value=Valkyrie></option>,
+                <option value=Skeleton-Army></option>,
+                <option value=Bomber></option>,
+                <option value=Musketeer></option>,
+                <option value=Baby-Dragon> </option>,
+                <option value=Prince></option>,
+                <option value=Wizard></option>,
+                <option value=Mini-P.E.K.K.A></option>,
+                <option value=Spear-Goblins> </option>,
+                <option value=Giant-Skeleton> </option>,
+                <option value=Hog-Rider> </option>,
+                <option value=Minion-Horde> </option>,
+                <option value=Ice-Wizard> </option>,
+                <option value=Royal-Giant> </option>,
+                <option value=Guards></option>,
+                <option value=Princess></option>,
+                <option value=Dark-Prince> </option>,
+                <option value=Three-Musketeers> </option>,
+                <option value=Lava-Hound> </option>,
+                <option value=Ice-Spirit> </option>,
+                <option value=Fire-Spirit> </option>,
+                <option value=Miner></option>,
+                <option value=Sparky></option>,
+                <option value=Bowler></option>,
+                <option value=Lumberjack></option>,
+                <option value=Battle-Ram> </option>,
+                <option value=Inferno-Dragon> </option>,
+                <option value=Ice-Golem> </option>,
+                <option value=Mega-Minion> </option>,
+                <option value=Dart-Goblin> </option>,
+                <option value=Goblin-Gang> </option>,
+                <option value=Electro-Wizard> </option>,
+                <option value=Elite-Barbarians> </option>,
+                <option value=Hunter></option>,
+                <option value=Executioner></option>,
+                <option value=Bandit></option>,
+                <option value=Royal-Recruits> </option>,
+                <option value=Night-Witch> </option>,
+                <option value=Bats></option>,
+                <option value=Royal-Ghost> </option>,
+                <option value=Ram-Rider> </option>,
+                <option value=Zappies></option>,
+                <option value=Rascals></option>,
+                <option value=Cannon-Cart> </option>,
+                <option value=Mega-Knight> </option>,
+                <option value=Skeleton-Barrel> </option>,
+                <option value=Flying-Machine> </option>,
+                <option value=Wall-Breakers> </option>,
+                <option value=Royal-Hogs> </option>,
+                <option value=Goblin-Giant> </option>,
+                <option value=Fisherman></option>,
+                <option value=Magic-Archer> </option>,
+                <option value=Electro-Dragon> </option>,
+                <option value=Firecracker></option>,
+                <option value=Mighty-Miner> </option>,
+                <option value=Elixir-Golem> </option>,
+                <option value=Battle-Healer> </option>,
+                <option value=Skeleton-King> </option>,
+                <option value=Archer-Queen> </option>,
+                <option value=Golden-Knight> </option>,
+                <option value=Monk></option>,
+                <option value=Skeleton-Dragons> </option>,
+                <option value=Mother-Witch> </option>,
+                <option value=Electro-Spirit> </option>,
+                <option value=Electro-Giant> </option>,
+                <option value=Phoenix></option>,
+                <option value=Cannon></option>,
+                <option value=Goblin-Hut> </option>,
+                <option value=Mortar></option>,
+                <option value=Inferno-Tower> </option>,
+                <option value=Bomb-Tower> </option>,
+                <option value=Barbarian-Hut> </option>,
+                <option value=Tesla></option>,
+                <option value=Elixir-Collector> </option>,
+                <option value=X-Bow></option>,
+                <option value=Tombstone></option>,
+                <option value=Furnace></option>,
+                <option value=Goblin-Cage> </option>,
+                <option value=Goblin-Drill> </option>,
+                <option value=Fireball></option>,
+                <option value=Arrows></option>,
+                <option value=Rage></option>,
+                <option value=Rocket></option>,
+                <option value=Goblin-Barrel> </option>,
+                <option value=Freeze></option>,
+                <option value=Mirror></option>,
+                <option value=Lightning></option>,
+                <option value=Zap></option>,
+                <option value=Poison></option>,
+                <option value=Graveyard></option>,
+                <option value=The-Log> </option>,
+                <option value=Tornado></option>,
+                <option value=Clone></option>,
+                <option value=Earthquake></option>,
+                <option value=Barbarian-Barrel> </option>,
+                <option value=Heal-Spirit> </option>,
+                <option value=Giant-Snowball> </option>,
+                <option value=Royal-Delivery> </option>
+                
+            </datalist> 
+            <div onclick="GuessCard()" class="srchBtn" style="width: 80px; height: 29px; border-radius: 5px; background-color: #7B4BB0; margin-left: 10px; border: grey; box-shadow: inset 0px 0px 5px rgba(0,0,0,0.5); font-family: 'Supercell-Magic'; justify-content: center; align-items: center; display: flex;">
+                <h1 style="font-size: 10px; color: white; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; text-align: center;">Search</h1>
+            </div>
+
+            
+        </div>
+        <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; margin-right: 50px;  width: 100%; margin-bottom: 15px;">
+            <div style=" width: 600px; height: 35px; margin-top: 20px; display: flex; flex-direction: row-reverse; gap: 15px;">
+                <div style="width: 120px; height: 35px; background-color: #1F2F54; border-radius: 10px; box-shadow: inset 0px 0px 5px #44e5c76d; display: flex; justify-content: center; align-items: center;">
+                    <h1 style="font-size: 13px; color: white; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; text-align: center;">Arena</h1>
+                </div>
+                <div style="width: 120px; height: 35px; background-color: #1F2F54; border-radius: 10px; box-shadow: inset 0px 0px 5px #44e5c76d; display: flex; justify-content: center; align-items: center;">
+                    <h1 style="font-size: 13px; color: white; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; text-align: center;">Type</h1>
+                </div>
+                <div style="width: 120px; height: 35px; background-color: #1F2F54; border-radius: 10px; box-shadow: inset 0px 0px 5px #44e5c76d; display: flex; justify-content: center; align-items: center;">
+                    <h1 style="font-size: 13px; color: white; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; text-align: center;">Rarity</h1>
+                </div>
+                <div style="width: 120px; height: 35px; background-color: #1F2F54; border-radius: 10px; box-shadow: inset 0px 0px 5px #44e5c76d; display: flex; justify-content: center; align-items: center;">
+                    <h1 style="font-size: 13px; color: white; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; text-align: center;">Elixer</h1>
+                </div>
+                <div style="width: 100px; height: 100px;"> </div>
+            </div>
+        </div>
+        <!-- Cards stats -->
+        <div id="cardGuessedList" style="display: flex; align-items: center; flex-direction: column; margin-right: 50px; overflow-y: scroll; width: 100%; height: 60%; padding-top: 5px;">
+            <!-- <div style=" width: 600px; height: 100px; margin-top: 20px; display: flex; flex-direction: row-reverse; gap: 15px;">
+                <div style="width: 120px; height: 100px; background-color: #1F2F54; position: relative; z-index: 1; border-radius: 10px; box-shadow: inset 0px 0px 5px #44e5c76d; display: flex; justify-content: center; align-items: center;">
+                    <h1 style="font-size: 13px; color: white; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; text-align: center;">Arena</h1>
+                    <img src="/Images/redArrow.png" style="position: absolute; z-index: -1; width: 60px; transform: rotate(180deg);">
+                </div>
+                <div style="width: 120px; height: 100px; background-color: #1F2F54; position: relative; z-index: 1; border-radius: 10px; box-shadow: inset 0px 0px 5px #44e5c76d; display: flex; justify-content: center; align-items: center;">
+                    <h1 style="font-size: 13px; color: white; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; text-align: center;">Type</h1>
+                    <img src="/Images/redArrow.png" style="position: absolute; z-index: -1; width: 60px; transform: rotate(180deg);">
+                </div>
+                <div style="width: 120px; height: 100px; background-color: #1F2F54; position: relative; z-index: 1; border-radius: 10px; box-shadow: inset 0px 0px 5px #44e5c76d; display: flex; justify-content: center; align-items: center;">
+                    <h1 style="font-size: 13px; color: white; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; text-align: center;">Rarity</h1>
+                    <img src="/Images/redArrow.png" style="position: absolute; z-index: -1; width: 60px; transform: rotate(180deg);">
+                </div>
+                <div style="width: 120px; height: 100px; background-color: #1F2F54; position: relative; z-index: 1; border-radius: 10px; box-shadow: inset 0px 0px 5px #44e5c76d; display: flex; justify-content: center; align-items: center;">
+                    <h1 style="font-size: 13px; color: white; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; text-align: center;">Elixer</h1>
+                    <img src="/Images/redArrow.png" style="position: absolute; z-index: -1; width: 60px; transform: rotate(180deg);">
+                </div>
+                <img src="/Images/cardimg.png" style="width: 100px; height: 100px;">
+            </div> -->
+            
+        </div>
+        
+    </div>
+</body>
+</html>
+<script src="/index.js"></script>
+<script>
+    
+    function init()
+    {
+        cardInfoList = getRandomCard()
+        
+        cardL = getCardList(cardInfoList)
+        Cookies.set('cardList', JSON.stringify(cardL))
+    }
+    init()
+
+
+    function GuessCard()
+    {
+        cardName = document.getElementById('inputCard').value
+        cardName = cardName.replace('-', ' ')
+        console.log('guessing ' + cardName)
+
+        cardInfo = findCardInfoFromName(cardName)
+        cardInfo = getCardList(cardInfo)
+        console.log(cardInfo)
+
+        ArenaColor = '#5AFFA6' // green
+        AreenaArrow = '0deg'
+        ArenaArrowOpac = 0
+
+        TypeColor = '#5AFFA6' // green
+
+        RarityColor = '#5AFFA6' // green
+        RarityArrow = '0deg'
+        RarityArrowOpac = 0
+
+        ElixirColor = '#5AFFA6' // green
+        ElixirArrow = '0deg'
+        ElixirArrowOpac = 0
+
+
+        const rarityList = ['Common', 'Rare', 'Epic', 'Legendary', 'Champion']
+
+        cardList = JSON.parse(Cookies.get('cardList'))
+        console.log(cardList)
+
+        if(cardInfo['arena'] != cardList['arena']) // not found Arena
+        {
+            ArenaArrowOpac = 1
+            ArenaColor = '#FF5A5A' // red
+            console.log('Failed arena ' + cardList['arena'])
+            if(cardInfo['arena'] > cardList['arena'])
+            {
+                AreenaArrow = '180deg'
+            }
+        }
+        if(cardInfo['type'] != cardList['type']) // not found Type
+        {
+            TypeColor = '#FF5A5A' // red
+        }
+        if(rarityList.indexOf(cardInfo['rarity']) != rarityList.indexOf(cardList['rarity'])) // not found Rarity
+        {
+            RarityArrowOpac = 1
+            RarityColor = '#FF5A5A' // red
+            if(rarityList.indexOf(cardInfo['rarity']) > rarityList.indexOf(cardList['rarity']))
+            {
+                RarityArrow = '180deg'
+            }
+        }
+        if(cardInfo['elixer'] != cardList['elixer']) // not found Elixer
+        {
+            ElixirArrowOpac = 1
+            ElixirColor = '#FF5A5A' // red
+            console.log('elixer failed', cardInfo['elixer'], cardList['elixer'])
+            if(cardInfo['elixer'] > cardList['elixer'])
+            {
+                ElixirArrow = '180deg'
+            }
+        }
+        
+        cardGuess = '<div style=" width: 600px; height: 100px; margin-top: 20px; display: flex; flex-direction: row-reverse; gap: 15px;"><div style="width: 120px; height: 100px; background-color: #1F2F54;position: relative; z-index:1; border-radius: 10px; box-shadow: inset 0px 0px 5px '+ArenaColor+'; display: flex; justify-content: center; align-items: center;"><h1 style="font-size: 13px; color: white; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; text-align: center;">'+cardInfo['arena']+'</h1><img src="/Images/redArrow.png" style="position: absolute; z-index: -1; width: 60px; transform: rotate('+AreenaArrow+'); opacity: '+ArenaArrowOpac+' "></div><div style="width: 120px; height: 100px; background-color: #1F2F54;position: relative; z-index:1; border-radius: 10px; box-shadow: inset 0px 0px 5px '+TypeColor+'; display: flex; justify-content: center; align-items: center;"><h1 style="font-size: 13px; color: white; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; text-align: center;">'+cardInfo['type']+'</h1></div><div style="width: 120px; height: 100px; background-color: #1F2F54;position: relative; z-index:1; border-radius: 10px; box-shadow: inset 0px 0px 5px '+RarityColor+'; display: flex; justify-content: center; align-items: center;"><h1 style="font-size: 13px; color: white; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; text-align: center;">'+cardInfo['rarity']+'</h1><img src="/Images/redArrow.png" style="position: absolute; z-index: -1; width: 60px; transform: rotate('+RarityArrow+'); opacity: '+RarityArrowOpac+'"></div><div style="width: 120px; height: 100px; background-color: #1F2F54;position: relative; z-index:1; border-radius: 10px; box-shadow: inset 0px 0px 5px '+ElixirColor+'; display: flex; justify-content: center; align-items: center;"><h1 style="font-size: 13px; color: white; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; text-align: center;">'+cardInfo['elixer']+'</h1><img src="/Images/redArrow.png" style="position: absolute; z-index: -1; width: 60px; transform: rotate('+ElixirArrow+'); opacity: '+ElixirArrowOpac+'"></div><img src="'+cardInfo['icon']+'" style="width: 100px; height: 100px;"></div>'
+        document.getElementById('cardGuessedList').insertAdjacentHTML('beforeend', cardGuess)
+
+
+        offsetTopOfLastElement = (document.getElementById('cardGuessedList').children[(document.getElementById('cardGuessedList').children.length - 1)].offsetTop)
+        // document.getElementById('cardGuessedList').children[(document.getElementById('cardGuessedList').children.length - 1)].scrollIntoView()
+        document.getElementById('cardGuessedList').scrollTo({top: offsetTopOfLastElement, behavior: "smooth"})
+
+        if(cardList['name'] == cardInfo['name'])
+        {
+            winText = '<div style=" width: 600px; height: 100px; margin-top: 20px; display: flex; justify-content: center; align-items: center; flex-direction: row-reverse; gap: 15px;"><h1 style="text-align: center; font-size: 20px; color: #5AFFA6;">Correct <br><br> '+document.getElementById('cardGuessedList').children.length+' attempts </h1></div>' 
+            document.getElementById('cardGuessedList').insertAdjacentHTML('beforeend', winText)
+
+            offsetTopOfLastElement = (document.getElementById('cardGuessedList').children[(document.getElementById('cardGuessedList').children.length - 1)].offsetTop)
+
+
+            document.getElementById('cardGuessedList').scrollTo({top: offsetTopOfLastElement, behavior: "smooth"})
+        }
+
+
+    }
+
+</script>
+
+<style>
+    body{
+        overflow: hidden;
+        font-family: 'Supercell-Magic';
+        background-color: #0d395e;
+    }
+    .srchBtn:hover{
+        opacity: 0.8;
+        cursor: pointer;
+    }
+    .headingTxt:hover{
+        cursor: pointer;
+        opacity: 0.9;
+        text-shadow: none;
+    }
+    .subHeadTxt:hover{
+        cursor: pointer;
+    }
+
+</style>
