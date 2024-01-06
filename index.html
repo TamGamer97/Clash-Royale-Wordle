@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clash Royale Wordle</title>
-    <link href="/CRFont.ttf" rel="stylesheet">
+    <!-- <link href="/CRFont.ttf" rel="stylesheet"> -->
     <link rel="icon" type="image/png" href="/Images/favicon.png">
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
 </head>
@@ -128,8 +128,13 @@
                 <option value=Royal-Delivery> </option>
                 
             </datalist> 
-            <div onclick="GuessCard()" class="srchBtn" style="width: 80px; height: 29px; border-radius: 5px; background-color: #7B4BB0; margin-left: 10px; border: grey; box-shadow: inset 0px 0px 5px rgba(0,0,0,0.5); font-family: 'Supercell-Magic'; justify-content: center; align-items: center; display: flex;">
-                <h1 style="font-size: 10px; color: white; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; text-align: center;">Search</h1>
+            <div style="height: 29px; width: 80px; display: flex; flex-direction: row; position: relative;">
+                <div onclick="GuessCard()" class="srchBtn" style="width: 80px; height: 29px; border-radius: 5px; background-color: #7B4BB0; border: grey; box-shadow: inset 0px 0px 5px rgba(0,0,0,0.5); font-family: 'Supercell-Magic'; justify-content: center; align-items: center; display: flex;">
+                    <h1 style="font-size: 10px; color: white; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; text-align: center;">Search</h1>
+                </div>
+                <div onclick="GiveUp()" class="srchBtn" style="width: 80px; height: 29px; border-radius: 5px; background-color: #BA4A4A; border: grey; box-shadow: inset 0px 0px 5px rgba(0,0,0,0.5); font-family: 'Supercell-Magic'; justify-content: center; align-items: center; display: flex; left: 85px; position: absolute;">
+                    <h1 style="font-size: 10px; color: white; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; text-align: center;">Give Up</h1>
+                </div>
             </div>
 
             
@@ -193,13 +198,19 @@
 
     function GuessCard()
     {
+        if(document.getElementById('inputCard').readOnly == true || document.getElementById('inputCard').value == '')
+        {
+            return
+        }
+
         cardName = document.getElementById('inputCard').value
         cardName = cardName.replace('-', ' ')
         console.log('guessing ' + cardName)
 
         cardInfo = findCardInfoFromName(cardName)
-        cardInfo = getCardList(cardInfo)
+        console.log('Info')
         console.log(cardInfo)
+        cardInfo = getCardList(cardInfo)
 
         ArenaColor = '#5AFFA6' // green
         AreenaArrow = '0deg'
@@ -272,14 +283,52 @@
 
 
             document.getElementById('cardGuessedList').scrollTo({top: offsetTopOfLastElement, behavior: "smooth"})
+
+            document.getElementById('inputCard').readOnly = true;
         }
+
+        document.getElementById('inputCard').value = ''
 
 
     }
 
+    function GiveUp()
+    {
+        if(document.getElementById('inputCard').readOnly == true)
+        {
+            return
+        }
+        cardName = cardList = JSON.parse(Cookies.get('cardList'))['name']
+        winText = '<div style=" width: 600px; height: 100px; margin-top: 20px; display: flex; justify-content: center; align-items: center; flex-direction: row-reverse; gap: 15px;"><h1 style="text-align: center; font-size: 20px; color: #EA5454;">You Loose<br><br> Your card was <span style="color: #ffc32f;"> '+cardName+' </span </h1></div>' 
+        document.getElementById('cardGuessedList').insertAdjacentHTML('beforeend', winText)
+
+        offsetTopOfLastElement = (document.getElementById('cardGuessedList').children[(document.getElementById('cardGuessedList').children.length - 1)].offsetTop)
+
+
+        document.getElementById('cardGuessedList').scrollTo({top: offsetTopOfLastElement, behavior: "smooth"})
+
+        document.getElementById('inputCard').value = ''
+        document.getElementById('inputCard').readOnly = true;
+    }
+    document.addEventListener("keydown", (e) => {
+        var keyCode = e.keyCode;
+
+        if(keyCode == 13)
+        {
+            GuessCard()
+        }
+
+    }, false);
+
 </script>
 
 <style>
+
+    @font-face {
+        font-family: 'Supercell-Magic';
+        src: url('https://github.com/TamGamer97/Clash-Royale-Wordle/blob/main/CRFont.ttf');
+    }
+
     body{
         overflow: hidden;
         font-family: 'Supercell-Magic';
@@ -298,4 +347,20 @@
         cursor: pointer;
     }
 
+    /* scroll bar  */
+        *::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        *::-webkit-scrollbar-track {
+            background: #486087;
+            border-radius: 20px;
+        }
+
+        *::-webkit-scrollbar-thumb {
+            background-color: #2164a3;
+            border-radius: 20px;
+        }
+
 </style>
+

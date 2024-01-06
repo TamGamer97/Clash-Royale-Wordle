@@ -1546,11 +1546,13 @@ function getCardList(cardInfo)
 
 function findCardInfoFromName(name)
 {
+    name = name.toLowerCase()
     for (var x = 0; x < cards.length; x++)
     {
-        if(cards[x]['name'] == name)
+        if((cards[x]['name']).toLowerCase() == name)
         {
             return cards[x]
         }
     }
 }
+
